@@ -1,6 +1,6 @@
-# LiquidCloud
+# Chaevlycloud
 
-A storage repository for our client [LiquidBounce](https://liquidbounce.net/)
+A cloud API repository for our client [Chaevly](https://DLindustries/Chaevly)
 
 Official Chaevly repo: <https://github.com/DLindustries/Chaevly> \
 YouTube: <https://youtube.com/@quoly> 
