@@ -2,11 +2,9 @@
 
 A storage repository for our client [LiquidBounce](https://liquidbounce.net/)
 
-Website: <https://liquidbounce.net> \
-Forum: <https://forums.ccbluex.net> \
-Guilded: <https://www.guilded.gg/CCBlueX> \
-YouTube: <https://youtube.com/CCBlueX> \
-Twitter: <https://twitter.com/CCBlueX>
+Official Chaevly repo: <https://github.com/DLindustries/Chaevly> \
+YouTube: <https://youtube.com/@quoly> 
+
 
 ## Contributing
 
