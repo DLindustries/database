@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="b8daecd_0.4.12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/LiquidCloud/LiquidBounce/ultralight_resources/b8daecd_0.4.12/linux-x64.zip!/" />
+      <root url="jar://$PROJECT_DIR$/LiquidCloud/LiquidBounce/ultralight_resources/b8daecd_0.4.12/mac-x64.zip!/" />
+      <root url="jar://$PROJECT_DIR$/LiquidCloud/LiquidBounce/ultralight_resources/b8daecd_0.4.12/win-x64.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

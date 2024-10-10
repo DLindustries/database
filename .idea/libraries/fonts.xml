@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="fonts">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/LiquidCloud/LiquidBounce/fonts/Nunito.zip!/" />
+      <root url="jar://$PROJECT_DIR$/LiquidCloud/LiquidBounce/fonts/Roboto.zip!/" />
+      <root url="jar://$PROJECT_DIR$/LiquidCloud/LiquidBounce/fonts/Montserrat.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
