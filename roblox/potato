@@ -1,0 +1,16 @@
+local player = game.Players.LocalPlayer
+
+while true do
+    player.CameraMaxZoomDistance = math.huge
+    wait(0.5)
+end
+
+local player = game.Players.LocalPlayer
+
+while true do
+    player.CameraMaxZoomDistance = math.huge
+    wait(0.5)
+end
+
+
+Lighting.Changed:Connect(enableFullBright)
