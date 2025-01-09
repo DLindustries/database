@@ -119,9 +119,7 @@ if CheckFunc(hookmetamethod) then
     Modifications:Toggle('Perfect Cast', {location = flags, flag = 'perfectcast'})
     Modifications:Toggle('Always Catch', {location = flags, flag = 'alwayscatch'})
 end
-Modifications:Section('Client')
-Modifications:Toggle('Infinite Oxygen', {location = flags, flag = 'infoxygen'})
-Modifications:Toggle('No Temp & Oxygen', {location = flags, flag = 'nopeakssystems'})
+
 -----
 Teleports:Section('Locations')
 Teleports:Dropdown('Zones', {location = flags, flag = 'zones', list = ZoneNames})
@@ -129,12 +127,7 @@ Teleports:Button('Teleport To Zone', function() gethrp().CFrame = TeleportLocati
 Teleports:Dropdown('Rod Locations', {location = flags, flag = 'rodlocations', list = RodNames})
 Teleports:Button('Teleport To Rod', function() gethrp().CFrame = TeleportLocations['Rods'][flags['rodlocations']] end)
 -----
-Visuals:Section('Rod')
-Visuals:Toggle('Body Rod Chams', {location = flags, flag = 'bodyrodchams'})
-Visuals:Toggle('Rod Chams', {location = flags, flag = 'rodchams'})
-Visuals:Dropdown('Material', {location = flags, flag = 'rodmaterial', list = {'ForceField', 'Neon'}})
-Visuals:Section('Fish Abundance')
-Visuals:Toggle('Free Fish Radar', {location = flags, flag = 'fishabundance'})
+
 
 --// Loops
 RunService.Heartbeat:Connect(function()
