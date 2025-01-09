@@ -36,7 +36,7 @@ local TeleportLocations = {
     ['Rods'] = {
         ['Heaven Rod'] = CFrame.new(20025.0508, -467.665955, 7114.40234, -0.9998191, -2.41349773e-10, 0.0190212391, -4.76249762e-10, 1, -1.23448247e-08, -0.0190212391, -1.23516495e-08, -0.9998191),
         ['Summit Rod'] = CFrame.new(20213.334, 736.668823, 5707.8208, -0.274440169, 3.53429606e-08, 0.961604178, -1.52819659e-08, 1, -4.11156122e-08, -0.961604178, -2.59789772e-08, -0.274440169),
-
+        ['Kings Rod'] = CFrame.new(1380.83862, -807.198608, -304.22229, -0.692510426, 9.24755454e-08, 0.72140789, 4.86611427e-08, 1, -8.1475676e-08, -0.72140789, -2.13182219e-08, -0.692510426)
     }
 }
 local ZoneNames = {}
@@ -95,12 +95,12 @@ if CheckFunc(makefolder) and (CheckFunc(isfolder) and not isfolder('fisch')) the
     makefolder('fisch')
 end
 if CheckFunc(writefile) and (CheckFunc(isfile) and not isfile('fisch/library.lua')) then
-    writefile('fisch/library.lua', game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish.lua'))
+    writefile('fisch/library.lua', game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish'))
 end
 if CheckFunc(loadfile) then
     library = loadfile('fisch/library.lua')()
 else
-    library = loadstring(game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish.lua'))()
+    library = loadstring(game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish'))()
 end
 local Automation = library:CreateWindow('Automation')
 local Modifications = library:CreateWindow('Modifications')
@@ -113,7 +113,11 @@ Automation:Toggle('Auto Cast', {location = flags, flag = 'autocast'})
 Automation:Toggle('Auto Shake', {location = flags, flag = 'autoshake'})
 Automation:Toggle('Auto Reel', {location = flags, flag = 'autoreel'})
 -----
-
+if CheckFunc(hookmetamethod) then
+    Modifications:Section('Hooks')
+    Modifications:Toggle('No AFK Text', {location = flags, flag = 'noafk'})
+    Modifications:Toggle('Perfect Cast', {location = flags, flag = 'perfectcast'})
+    Modifications:Toggle('Always Catch', {location = flags, flag = 'alwayscatch'})
 end
 Modifications:Section('Client')
 Modifications:Toggle('Infinite Oxygen', {location = flags, flag = 'infoxygen'})
@@ -125,7 +129,12 @@ Teleports:Button('Teleport To Zone', function() gethrp().CFrame = TeleportLocati
 Teleports:Dropdown('Rod Locations', {location = flags, flag = 'rodlocations', list = RodNames})
 Teleports:Button('Teleport To Rod', function() gethrp().CFrame = TeleportLocations['Rods'][flags['rodlocations']] end)
 -----
-
+Visuals:Section('Rod')
+Visuals:Toggle('Body Rod Chams', {location = flags, flag = 'bodyrodchams'})
+Visuals:Toggle('Rod Chams', {location = flags, flag = 'rodchams'})
+Visuals:Dropdown('Material', {location = flags, flag = 'rodmaterial', list = {'ForceField', 'Neon'}})
+Visuals:Section('Fish Abundance')
+Visuals:Toggle('Free Fish Radar', {location = flags, flag = 'fishabundance'})
 
 --// Loops
 RunService.Heartbeat:Connect(function()
@@ -360,4 +369,3 @@ if CheckFunc(hookmetamethod) then
         end
         return old(self, ...)
     end)
-end
