@@ -95,12 +95,12 @@ if CheckFunc(makefolder) and (CheckFunc(isfolder) and not isfolder('fisch')) the
     makefolder('fisch')
 end
 if CheckFunc(writefile) and (CheckFunc(isfile) and not isfile('fisch/library.lua')) then
-    writefile('fisch/library.lua', game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish.lua'))
+    writefile('fisch/library.lua', game:HttpGet('https://raw.githubusercontent.com/xataxell/fisch/refs/heads/main/library.lua'))
 end
 if CheckFunc(loadfile) then
     library = loadfile('fisch/library.lua')()
 else
-    library = loadstring(game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish.lua'))()
+    library = loadstring(game:HttpGet('https://raw.githubusercontent.com/xataxell/fisch/refs/heads/main/library.lua'))()
 end
 local Automation = library:CreateWindow('Automation')
 local Modifications = library:CreateWindow('Modifications')
@@ -119,7 +119,9 @@ if CheckFunc(hookmetamethod) then
     Modifications:Toggle('Perfect Cast', {location = flags, flag = 'perfectcast'})
     Modifications:Toggle('Always Catch', {location = flags, flag = 'alwayscatch'})
 end
-
+Modifications:Section('Client')
+Modifications:Toggle('Infinite Oxygen', {location = flags, flag = 'infoxygen'})
+Modifications:Toggle('No Temp & Oxygen', {location = flags, flag = 'nopeakssystems'})
 -----
 Teleports:Section('Locations')
 Teleports:Dropdown('Zones', {location = flags, flag = 'zones', list = ZoneNames})
@@ -127,7 +129,12 @@ Teleports:Button('Teleport To Zone', function() gethrp().CFrame = TeleportLocati
 Teleports:Dropdown('Rod Locations', {location = flags, flag = 'rodlocations', list = RodNames})
 Teleports:Button('Teleport To Rod', function() gethrp().CFrame = TeleportLocations['Rods'][flags['rodlocations']] end)
 -----
-
+Visuals:Section('Rod')
+Visuals:Toggle('Body Rod Chams', {location = flags, flag = 'bodyrodchams'})
+Visuals:Toggle('Rod Chams', {location = flags, flag = 'rodchams'})
+Visuals:Dropdown('Material', {location = flags, flag = 'rodmaterial', list = {'ForceField', 'Neon'}})
+Visuals:Section('Fish Abundance')
+Visuals:Toggle('Free Fish Radar', {location = flags, flag = 'fishabundance'})
 
 --// Loops
 RunService.Heartbeat:Connect(function()
@@ -362,3 +369,4 @@ if CheckFunc(hookmetamethod) then
         end
         return old(self, ...)
     end)
+end
