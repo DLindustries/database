@@ -95,12 +95,12 @@ if CheckFunc(makefolder) and (CheckFunc(isfolder) and not isfolder('fisch')) the
     makefolder('fisch')
 end
 if CheckFunc(writefile) and (CheckFunc(isfile) and not isfile('fisch/library.lua')) then
-    writefile('fisch/library.lua', game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish'))
+    writefile('fisch/library.lua', game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish.lua'))
 end
 if CheckFunc(loadfile) then
     library = loadfile('fisch/library.lua')()
 else
-    library = loadstring(game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish'))()
+    library = loadstring(game:HttpGet('https://raw.githubusercontent.com/DLindustries/database/refs/heads/main/roblox/fish.lua'))()
 end
 local Automation = library:CreateWindow('Automation')
 local Modifications = library:CreateWindow('Modifications')
